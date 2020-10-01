@@ -1,0 +1,13 @@
+version: "3"
+services: 
+    client: 
+        build: Client
+        ports:
+            - 4000:80
+    nginx:
+        build: Nginx
+        ports: 
+            - 80:80
+        restart: always
+        depends_on: 
+            - client
